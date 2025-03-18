@@ -76,7 +76,6 @@ def create_fact_and_dimensions(df: pd.DataFrame):
         df_regions = df[['Country', 'City', 'State', 'Region', 'Postal Code']].drop_duplicates()
         df_products = df[['Product ID', 'Category', 'Sub-Category', 'Product Name']].drop_duplicates()
 
-
         df_orders['order_key'] = df_orders['Order ID'].astype('category').cat.codes
         df_shipping['ship_key'] = df_shipping['Ship Date'].astype('category').cat.codes
         df_customers['customer_key'] = df_customers['Customer ID'].astype('category').cat.codes
