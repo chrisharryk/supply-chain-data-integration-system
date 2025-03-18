@@ -12,8 +12,6 @@ def main():
         'dim_regions': df_regions,
         'dim_products': df_products
     }
-    # project_id = "learned-spider-453507-p8"
-    # dataset_id = "sales_analysis"
     push_to_bigquery(tables)
     create_kpi_procedures()
     mp = execute_all_kpis()
