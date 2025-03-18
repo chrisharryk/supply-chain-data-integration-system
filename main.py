@@ -19,8 +19,15 @@ def main():
     # mp = execute_all_kpis()
     # for k, v in mp.items():
     #     print(v.head())
-    df = execute_kpi_procedure('avg_order_frequency_by_customer', 'kpi_avg_order_frequency_by_customer')
-    print(df.head())
+    # df = execute_kpi_procedure('avg_order_frequency_by_customer', 'kpi_avg_order_frequency_by_customer')
+    # print(df.head())
+    # create_aggregation_procedures()
+    # mp = execute_all_aggregations()
+    # for k, v in mp.items():
+    #     print(v.head())
+    #     print()
+    # execute_partitioning_and_clustering()
+    pass
 
 if __name__ == '__main__':
     main()

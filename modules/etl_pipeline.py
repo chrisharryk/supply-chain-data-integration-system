@@ -19,13 +19,13 @@ logger = logging.getLogger(__name__)
 
 """
 pipe line:
-1. fetching data from kaggle
-2. data pre-processing
-3. making facts and dimensions
-5. pushing to big query
-4. partitioning and clustering
-5. make kpis
-6. aggregation tables
+1. fetching data from kaggle X
+2. data pre-processing X
+3. making facts and dimensions X
+5. pushing to big query X
+4. partitioning and clustering X
+5. make kpis X
+6. aggregation tables X
 7. create data marts
 8. manage analytics and show them on the other pages
 """
@@ -227,3 +227,171 @@ def execute_all_kpis():
             results[procedure] = df
 
     return results
+
+def create_aggregation_procedures():
+    queries = {
+        "aggregate_sales_by_month": """
+        CREATE OR REPLACE PROCEDURE sales_analysis.aggregate_sales_by_month()
+        BEGIN
+            CREATE OR REPLACE TABLE sales_analysis.agg_sales_monthly AS
+            SELECT 
+                EXTRACT(YEAR FROM DATE(d.`Order Date`)) AS order_year,
+                EXTRACT(MONTH FROM DATE(d.`Order Date`)) AS order_month,
+                SUM(f.Sales) AS total_sales,
+                COUNT(DISTINCT f.order_key) AS total_orders
+            FROM sales_analysis.fact_sales f
+            LEFT JOIN sales_analysis.dim_orders d 
+                ON f.order_key = d.order_key
+            GROUP BY order_year, order_month
+            ORDER BY order_year, order_month;
+        END;
+        """,
+        
+        "aggregate_sales_by_product": """
+        CREATE OR REPLACE PROCEDURE sales_analysis.aggregate_sales_by_product()
+        BEGIN
+            CREATE OR REPLACE TABLE sales_analysis.agg_sales_product AS
+            SELECT 
+                f.product_key,
+                p.`Product Name` AS product_name,  
+                p.`Category` AS category,
+                p.`Sub-Category` AS sub_category,
+                SUM(f.`Sales`) AS total_sales,
+                COUNT(DISTINCT f.order_key) AS total_orders
+            FROM sales_analysis.fact_sales f
+            LEFT JOIN sales_analysis.dim_products p 
+                ON f.product_key = p.product_key
+            GROUP BY f.product_key, p.`Product Name`, p.`Category`, p.`Sub-Category`
+            ORDER BY total_sales DESC;
+        END;
+        """,
+        
+        "aggregate_sales_by_category": """
+        CREATE OR REPLACE PROCEDURE sales_analysis.aggregate_sales_by_category()
+        BEGIN
+            CREATE OR REPLACE TABLE sales_analysis.agg_sales_category AS
+            SELECT 
+                p.`Category` AS category,
+                SUM(f.`Sales`) AS total_sales,
+                COUNT(DISTINCT f.order_key) AS total_orders
+            FROM sales_analysis.fact_sales f
+            LEFT JOIN sales_analysis.dim_products p 
+                ON f.product_key = p.product_key
+            GROUP BY p.`Category`
+            ORDER BY total_sales DESC;
+        END;
+        """,
+        
+        "aggregate_sales_by_subcategory": """
+        CREATE OR REPLACE PROCEDURE sales_analysis.aggregate_sales_by_subcategory()
+        BEGIN
+            CREATE OR REPLACE TABLE sales_analysis.agg_sales_subcategory AS
+            SELECT 
+                p.`Sub-Category` AS subcategory,
+                SUM(f.`Sales`) AS total_sales,
+                COUNT(DISTINCT f.order_key) AS total_orders
+            FROM sales_analysis.fact_sales f
+            LEFT JOIN sales_analysis.dim_products p 
+                ON f.product_key = p.product_key
+            GROUP BY p.`Sub-Category`
+            ORDER BY total_sales DESC;
+        END;
+        """,
+        
+        "aggregate_revenue_by_region": """
+        CREATE OR REPLACE PROCEDURE sales_analysis.aggregate_revenue_by_region()
+        BEGIN
+            CREATE OR REPLACE TABLE sales_analysis.agg_revenue_region AS
+            SELECT 
+                r.state AS region,
+                SUM(f.`Sales`) AS total_revenue,
+                COUNT(DISTINCT f.order_key) AS total_orders
+            FROM sales_analysis.fact_sales f
+            LEFT JOIN sales_analysis.dim_regions r 
+                ON f.region_key = r.region_key
+            GROUP BY r.state
+            ORDER BY total_revenue DESC;
+        END;
+        """
+    }
+
+    for procedure_name, query in queries.items():
+        try:
+            client.query(query).result()
+            logging.info(f"Created procedure: {procedure_name}")
+        except Exception as e:
+            logging.error(f"Error creating procedure '{procedure_name}': {e}")
+
+def execute_aggregation_procedure(procedure_name, output_table):
+    query = f"CALL sales_analysis.{procedure_name}();"
+    
+    try:
+        logger.info(f"Executing procedure: {procedure_name}...")
+        client.query(query).result()
+        logger.info(f"Successfully executed procedure: {procedure_name}. Fetching results...")
+        
+        df = client.query(f"SELECT * FROM sales_analysis.{output_table}").to_dataframe()
+        logger.info(f"Successfully fetched data from {output_table}.")
+        return df
+    
+    except Exception as e:
+        logger.error(f"Error executing procedure '{procedure_name}': {e}")
+        return None
+
+def execute_all_aggregations():
+    aggregation_procedures = {
+        "aggregate_sales_by_month": "agg_sales_monthly",
+        "aggregate_sales_by_product": "agg_sales_product",
+        "aggregate_sales_by_category": "agg_sales_category",
+        "aggregate_sales_by_subcategory": "agg_sales_subcategory",
+        "aggregate_revenue_by_region": "agg_revenue_region"
+    }
+
+    results = {}
+
+    for procedure, output_table in aggregation_procedures.items():
+        df = execute_aggregation_procedure(procedure, output_table)
+        if df is not None:
+            results[procedure] = df
+
+    return results
+
+def partition_fact_sales():
+    query = """
+    CREATE OR REPLACE TABLE `learned-spider-453507-p8.sales_analysis.fact_sales_partitioned`
+    PARTITION BY order_date AS
+    SELECT 
+        f.*, 
+        d.`Order Date` AS order_date
+    FROM `learned-spider-453507-p8.sales_analysis.fact_sales` f
+    LEFT JOIN `learned-spider-453507-p8.sales_analysis.dim_orders` d 
+    ON f.order_key = d.order_key;
+    """
+    try:
+        client.query(query).result()
+        logging.info("Partitioned table 'fact_sales_partitioned' created successfully.")
+    except Exception as e:
+        logging.error(f"Error partitioning fact_sales: {e}")
+
+def cluster_fact_sales():
+    query = """
+    CREATE OR REPLACE TABLE `learned-spider-453507-p8.sales_analysis.fact_sales_partitioned_clustered`
+    PARTITION BY order_date
+    CLUSTER BY customer_key, product_key, region_key
+    AS
+    SELECT 
+      f.*, 
+      d.`Order Date` AS order_date
+    FROM `learned-spider-453507-p8.sales_analysis.fact_sales` f
+    JOIN `learned-spider-453507-p8.sales_analysis.dim_orders` d 
+    ON f.order_key = d.order_key;
+    """
+    try:
+        client.query(query).result()
+        logging.info("Partitioned & clustered table 'fact_sales_partitioned_clustered' created successfully.")
+    except Exception as e:
+        logging.error(f"Error clustering fact_sales: {e}")
+
+def execute_partitioning_and_clustering():
+    partition_fact_sales()
+    cluster_fact_sales()

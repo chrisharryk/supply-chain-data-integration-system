@@ -252,3 +252,47 @@ Job ID: dd79c602-25ce-4536-9a30-c7c4d4a43e86
 2025-03-18 07:15:59,917 - INFO - Executing procedure: avg_order_frequency_by_customer...
 2025-03-18 07:16:04,088 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
 2025-03-18 07:16:06,049 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 08:02:19,526 - INFO - Created procedure: aggregate_sales_by_month
+2025-03-18 08:02:21,573 - INFO - Created procedure: aggregate_sales_by_product
+2025-03-18 08:02:23,826 - INFO - Created procedure: aggregate_sales_by_category
+2025-03-18 08:02:26,079 - INFO - Created procedure: aggregate_sales_by_subcategory
+2025-03-18 08:02:28,128 - INFO - Created procedure: aggregate_revenue_by_region
+2025-03-18 08:04:30,206 - INFO - Executing procedure: aggregate_sales_by_month...
+2025-03-18 08:04:34,385 - INFO - Successfully executed procedure: aggregate_sales_by_month. Fetching results...
+2025-03-18 08:04:36,143 - INFO - Successfully fetched data from agg_sales_monthly.
+2025-03-18 08:04:36,143 - INFO - Executing procedure: aggregate_sales_by_product...
+2025-03-18 08:04:41,860 - INFO - Successfully executed procedure: aggregate_sales_by_product. Fetching results...
+2025-03-18 08:04:43,686 - INFO - Successfully fetched data from agg_sales_product.
+2025-03-18 08:04:43,686 - INFO - Executing procedure: aggregate_sales_by_category...
+2025-03-18 08:04:47,185 - INFO - Successfully executed procedure: aggregate_sales_by_category. Fetching results...
+2025-03-18 08:04:48,825 - INFO - Successfully fetched data from agg_sales_category.
+2025-03-18 08:04:48,825 - INFO - Executing procedure: aggregate_sales_by_subcategory...
+2025-03-18 08:04:52,406 - INFO - Successfully executed procedure: aggregate_sales_by_subcategory. Fetching results...
+2025-03-18 08:04:54,048 - INFO - Successfully fetched data from agg_sales_subcategory.
+2025-03-18 08:04:54,048 - INFO - Executing procedure: aggregate_revenue_by_region...
+2025-03-18 08:04:57,938 - INFO - Successfully executed procedure: aggregate_revenue_by_region. Fetching results...
+2025-03-18 08:04:59,446 - INFO - Successfully fetched data from agg_revenue_region.
+2025-03-18 08:11:59,106 - ERROR - Error partitioning fact_sales: 400 No matching signature for function PARSE_DATE
+  Argument types: STRING, DATE
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATE to expected type STRING at [6:9]; reason: invalidQuery, location: query, message: No matching signature for function PARSE_DATE
+  Argument types: STRING, DATE
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATE to expected type STRING at [6:9]
+
+Location: US
+Job ID: 29f8ae1c-e2e6-4cc0-bc4f-ca51fdf30bfb
+
+2025-03-18 08:12:00,233 - ERROR - Error clustering fact_sales: 400 No matching signature for function PARSE_DATE
+  Argument types: STRING, DATE
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATE to expected type STRING at [8:7]; reason: invalidQuery, location: query, message: No matching signature for function PARSE_DATE
+  Argument types: STRING, DATE
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATE to expected type STRING at [8:7]
+
+Location: US
+Job ID: 1b162224-b954-419e-a041-86b0a356b41d
+
+2025-03-18 08:14:44,762 - INFO - Partitioned table 'fact_sales_partitioned' created successfully.
+2025-03-18 08:15:09,570 - INFO - Partitioned & clustered table 'fact_sales_partitioned_clustered' created successfully.
