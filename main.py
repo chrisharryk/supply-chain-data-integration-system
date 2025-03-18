@@ -16,7 +16,11 @@ def main():
     # dataset_id = "sales_analysis"
     # push_to_bigquery(tables, project_id, dataset_id)
     # create_kpi_procedures()
-    execute_all_kpis()
+    # mp = execute_all_kpis()
+    # for k, v in mp.items():
+    #     print(v.head())
+    df = execute_kpi_procedure('avg_order_frequency_by_customer', 'kpi_avg_order_frequency_by_customer')
+    print(df.head())
 
 if __name__ == '__main__':
     main()

@@ -194,22 +194,36 @@ def create_kpi_procedures():
         except Exception as e:
             logging.error(f"Error creating procedure '{proc_name}': {e}")
 
-def execute_kpi_procedure(procedure_name):
+def execute_kpi_procedure(procedure_name, output_table):
     query = f"CALL sales_analysis.{procedure_name}();"
+    
     try:
+        logger.info(f"Executing procedure: {procedure_name}...")
         client.query(query).result()
-        logging.info(f"Executed procedure: {procedure_name}")
+        logger.info(f"Successfully executed procedure: {procedure_name}. Fetching results...")
+        
+        df = client.query(f"SELECT * FROM sales_analysis.{output_table}").to_dataframe()
+        logger.info(f"Successfully fetched data from {output_table}.")
+        return df
+    
     except Exception as e:
-        logging.error(f"Error executing procedure '{procedure_name}': {e}")
+        logger.error(f"Error executing procedure '{procedure_name}': {e}")
+        return None
 
 def execute_all_kpis():
-    procedures = [
-        "calculate_lead_time",
-        "product_category_performance",
-        "product_subcategory_performance",
-        "avg_order_value_per_category",
-        "avg_order_frequency_by_customer"
-    ]
-    
-    for proc in procedures:
-        execute_kpi_procedure(proc)
+    kpi_procedures = {
+        "calculate_lead_time": "kpi_lead_time",
+        "product_category_performance": "kpi_product_category_performance",
+        "product_subcategory_performance": "kpi_product_subcategory_performance",
+        "avg_order_value_per_category": "kpi_avg_order_value_per_category",
+        "avg_order_frequency_by_customer": "kpi_avg_order_frequency_by_customer"
+    }
+
+    results = {}
+
+    for procedure, output_table in kpi_procedures.items():
+        df = execute_kpi_procedure(procedure, output_table)
+        if df is not None:
+            results[procedure] = df
+
+    return results
