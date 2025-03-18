@@ -1,0 +1,28 @@
+2025-03-18 05:16:41,623 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle..
+2025-03-18 05:16:43,708 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:18:15,889 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle..
+2025-03-18 05:18:18,201 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:31:40,981 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle..
+2025-03-18 05:31:43,000 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:31:43,000 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:31:43,067 - INFO - Removed 0 duplicate rows
+2025-03-18 05:31:43,078 - INFO - Data preprocessing completed successfully
+2025-03-18 05:32:23,573 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:32:25,599 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:32:25,599 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:32:25,646 - INFO - Removed 0 duplicate rows
+2025-03-18 05:32:25,654 - INFO - Data preprocessing completed successfully
+2025-03-18 05:32:35,556 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:32:37,548 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:32:37,548 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:32:37,596 - INFO - Removed 0 duplicate rows
+2025-03-18 05:32:37,604 - INFO - Data preprocessing completed successfully
+2025-03-18 05:34:48,462 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:34:50,504 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:34:50,504 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:34:50,547 - ERROR - Data preprocessing failed: unhashable type: 'Series'
+2025-03-18 05:35:18,382 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:35:20,414 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:35:20,414 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:35:20,467 - INFO - Removed 0 duplicate rows
+2025-03-18 05:35:20,475 - INFO - Data preprocessing completed successfully
