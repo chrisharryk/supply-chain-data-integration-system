@@ -296,3 +296,257 @@ Job ID: 1b162224-b954-419e-a041-86b0a356b41d
 
 2025-03-18 08:14:44,762 - INFO - Partitioned table 'fact_sales_partitioned' created successfully.
 2025-03-18 08:15:09,570 - INFO - Partitioned & clustered table 'fact_sales_partitioned_clustered' created successfully.
+2025-03-18 08:25:56,846 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 08:26:01,980 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 08:26:06,251 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 08:27:52,342 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 08:27:55,315 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 08:27:58,180 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 08:28:00,363 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 08:28:05,777 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 08:28:09,901 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 09:17:34,786 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 09:17:41,663 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 09:17:41,663 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 09:17:41,735 - INFO - Removed 0 duplicate rows
+2025-03-18 09:17:41,750 - INFO - Data preprocessing completed successfully
+2025-03-18 09:17:41,750 - INFO - Creating dimension tables...
+2025-03-18 09:17:41,787 - INFO - Creating fact table...
+2025-03-18 09:17:41,816 - INFO - Fact and dimension tables created successfully.
+2025-03-18 09:17:44,613 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 09:18:00,670 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 09:18:00,672 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 09:18:00,672 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 09:18:10,790 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 09:18:10,791 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 09:18:10,792 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 09:18:25,647 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 09:18:25,649 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 09:18:25,649 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 09:18:34,373 - INFO - 793 out of 793 rows loaded.
+2025-03-18 09:18:34,374 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 09:18:34,374 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 09:18:42,554 - INFO - 628 out of 628 rows loaded.
+2025-03-18 09:18:42,555 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 09:18:42,555 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 09:18:51,610 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 09:18:51,611 - INFO - Table dim_products uploaded successfully.
+2025-03-18 09:18:51,611 - INFO - All tables pushed to BigQuery.
+2025-03-18 09:18:56,817 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 09:19:00,019 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 09:19:02,676 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 09:19:05,918 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 09:19:08,666 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 09:19:08,666 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 09:19:12,663 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 09:19:16,328 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 09:19:16,329 - INFO - Executing procedure: product_category_performance...
+2025-03-18 09:19:20,235 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 09:19:25,497 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 09:19:25,498 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 09:19:30,535 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 09:19:32,256 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 09:19:32,256 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 09:19:36,272 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 09:19:38,138 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 09:19:38,138 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 09:19:42,181 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 09:19:44,014 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 09:19:44,090 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 09:19:48,292 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 09:19:50,458 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 09:19:52,653 - INFO - Created procedure: aggregate_sales_by_month
+2025-03-18 09:19:54,682 - INFO - Created procedure: aggregate_sales_by_product
+2025-03-18 09:19:56,793 - INFO - Created procedure: aggregate_sales_by_category
+2025-03-18 09:19:58,943 - INFO - Created procedure: aggregate_sales_by_subcategory
+2025-03-18 09:20:01,299 - INFO - Created procedure: aggregate_revenue_by_region
+2025-03-18 09:20:01,299 - INFO - Executing procedure: aggregate_sales_by_month...
+2025-03-18 09:20:04,886 - INFO - Successfully executed procedure: aggregate_sales_by_month. Fetching results...
+2025-03-18 09:20:06,832 - INFO - Successfully fetched data from agg_sales_monthly.
+2025-03-18 09:20:06,832 - INFO - Executing procedure: aggregate_sales_by_product...
+2025-03-18 09:20:10,821 - INFO - Successfully executed procedure: aggregate_sales_by_product. Fetching results...
+2025-03-18 09:20:13,410 - INFO - Successfully fetched data from agg_sales_product.
+2025-03-18 09:20:13,411 - INFO - Executing procedure: aggregate_sales_by_category...
+2025-03-18 09:20:17,379 - INFO - Successfully executed procedure: aggregate_sales_by_category. Fetching results...
+2025-03-18 09:20:19,537 - INFO - Successfully fetched data from agg_sales_category.
+2025-03-18 09:20:19,537 - INFO - Executing procedure: aggregate_sales_by_subcategory...
+2025-03-18 09:20:23,007 - INFO - Successfully executed procedure: aggregate_sales_by_subcategory. Fetching results...
+2025-03-18 09:20:25,062 - INFO - Successfully fetched data from agg_sales_subcategory.
+2025-03-18 09:20:25,062 - INFO - Executing procedure: aggregate_revenue_by_region...
+2025-03-18 09:20:28,638 - INFO - Successfully executed procedure: aggregate_revenue_by_region. Fetching results...
+2025-03-18 09:20:30,484 - INFO - Successfully fetched data from agg_revenue_region.
+2025-03-18 09:20:31,203 - ERROR - Error partitioning fact_sales: 400 Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; reason: invalid, location: None.None.fact_sales_partitioned, message: Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+
+Location: US
+Job ID: b37177a8-a194-4c53-a6cf-c0740628c381
+
+2025-03-18 09:20:31,712 - ERROR - Error clustering fact_sales: 400 Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; reason: invalid, location: None.None.fact_sales_partitioned_clustered, message: Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+
+Location: US
+Job ID: 5a98ed30-e3d9-4feb-845a-e563b1f5003b
+
+2025-03-18 09:20:32,222 - ERROR - Error creating data mart 'mart_inventory_analysis': 400 Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; reason: invalid, location: None.None.mart_inventory_analysis, message: Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+
+Location: US
+Job ID: a4a0a47e-f9c0-46df-beed-aa46a2758a87
+
+2025-03-18 09:20:32,734 - ERROR - Error creating data mart 'mart_order_fulfillment': 400 Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; reason: invalid, location: None.None.mart_order_fulfillment, message: Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+
+Location: US
+Job ID: fb631858-725d-4180-abaa-3788796266aa
+
+2025-03-18 09:20:33,353 - ERROR - Error creating data mart 'mart_shipping_logistics': 400 Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.; reason: invalid, location: None.None.mart_shipping_logistics, message: Invalid project ID 'None'. Project IDs must contain 6-63 lowercase letters, digits, or dashes. Some project IDs also include domain name separated by a colon. IDs must start with a letter and may not end with a dash.
+
+Location: US
+Job ID: 39e3fdbc-cdb9-4047-b066-964aab40020e
+
+2025-03-18 09:20:35,552 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 09:20:40,692 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 09:20:44,998 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 09:29:22,806 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 09:29:25,895 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 09:29:25,895 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 09:29:25,946 - INFO - Removed 0 duplicate rows
+2025-03-18 09:29:25,955 - INFO - Data preprocessing completed successfully
+2025-03-18 09:29:25,955 - INFO - Creating dimension tables...
+2025-03-18 09:29:25,983 - INFO - Creating fact table...
+2025-03-18 09:29:26,011 - INFO - Fact and dimension tables created successfully.
+2025-03-18 09:29:27,220 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 09:29:33,200 - ERROR - Error pushing tables to BigQuery: Reason: 404 POST https://bigquery.googleapis.com/bigquery/v2/projects/learned-spider-453507/datasets?prettyPrint=false: Project learned-spider-453507 is not found. Make sure it references valid GCP project that hasn't been deleted.; Project id: learned-spider-453507
+2025-03-18 09:29:36,581 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 09:29:39,043 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 09:29:41,403 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 09:29:43,440 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 09:29:45,593 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 09:29:45,594 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 09:29:49,071 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 09:29:52,899 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 09:29:52,899 - INFO - Executing procedure: product_category_performance...
+2025-03-18 09:29:56,549 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 09:29:58,701 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 09:29:58,701 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 09:30:02,590 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 09:30:04,845 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 09:30:04,845 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 09:30:08,547 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 09:30:10,909 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 09:30:10,909 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 09:30:15,813 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 09:30:18,576 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 09:30:20,713 - INFO - Created procedure: aggregate_sales_by_month
+2025-03-18 09:30:22,776 - INFO - Created procedure: aggregate_sales_by_product
+2025-03-18 09:30:24,935 - INFO - Created procedure: aggregate_sales_by_category
+2025-03-18 09:30:28,607 - INFO - Created procedure: aggregate_sales_by_subcategory
+2025-03-18 09:30:31,158 - INFO - Created procedure: aggregate_revenue_by_region
+2025-03-18 09:30:31,159 - INFO - Executing procedure: aggregate_sales_by_month...
+2025-03-18 09:30:35,767 - INFO - Successfully executed procedure: aggregate_sales_by_month. Fetching results...
+2025-03-18 09:30:38,537 - INFO - Successfully fetched data from agg_sales_monthly.
+2025-03-18 09:30:38,537 - INFO - Executing procedure: aggregate_sales_by_product...
+2025-03-18 09:30:46,417 - INFO - Successfully executed procedure: aggregate_sales_by_product. Fetching results...
+2025-03-18 09:30:49,484 - INFO - Successfully fetched data from agg_sales_product.
+2025-03-18 09:30:49,484 - INFO - Executing procedure: aggregate_sales_by_category...
+2025-03-18 09:30:53,893 - INFO - Successfully executed procedure: aggregate_sales_by_category. Fetching results...
+2025-03-18 09:30:56,146 - INFO - Successfully fetched data from agg_sales_category.
+2025-03-18 09:30:56,146 - INFO - Executing procedure: aggregate_sales_by_subcategory...
+2025-03-18 09:31:01,748 - INFO - Successfully executed procedure: aggregate_sales_by_subcategory. Fetching results...
+2025-03-18 09:31:04,236 - INFO - Successfully fetched data from agg_sales_subcategory.
+2025-03-18 09:31:04,236 - INFO - Executing procedure: aggregate_revenue_by_region...
+2025-03-18 09:31:08,637 - INFO - Successfully executed procedure: aggregate_revenue_by_region. Fetching results...
+2025-03-18 09:31:10,996 - INFO - Successfully fetched data from agg_revenue_region.
+2025-03-18 09:31:12,430 - ERROR - Error partitioning fact_sales: 404 Not found: Project learned-spider-453507; reason: notFound, message: Not found: Project learned-spider-453507
+
+Location: US
+Job ID: b462b700-c24b-4db4-a000-53f6dcf5d26e
+
+2025-03-18 09:31:13,861 - ERROR - Error clustering fact_sales: 404 Not found: Project learned-spider-453507; reason: notFound, message: Not found: Project learned-spider-453507
+
+Location: US
+Job ID: d1365afd-324f-47b1-a014-128cfd6f4426
+
+2025-03-18 09:31:15,498 - ERROR - Error creating data mart 'mart_inventory_analysis': 404 Not found: Project learned-spider-453507; reason: notFound, message: Not found: Project learned-spider-453507
+
+Location: US
+Job ID: 47ad4529-b592-4cd6-abf0-483c611f5d06
+
+2025-03-18 09:31:17,342 - ERROR - Error creating data mart 'mart_order_fulfillment': 404 Not found: Project learned-spider-453507; reason: notFound, message: Not found: Project learned-spider-453507
+
+Location: US
+Job ID: 75b948d5-ca75-4f88-8864-0ac23922272f
+
+2025-03-18 09:31:18,651 - ERROR - Error creating data mart 'mart_shipping_logistics': 404 Not found: Project learned-spider-453507; reason: notFound, message: Not found: Project learned-spider-453507
+
+Location: US
+Job ID: daebf035-7dc5-43aa-9130-c380fdf50869
+
+2025-03-18 09:32:35,126 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 09:32:38,204 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 09:32:38,204 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 09:32:38,253 - INFO - Removed 0 duplicate rows
+2025-03-18 09:32:38,262 - INFO - Data preprocessing completed successfully
+2025-03-18 09:32:38,262 - INFO - Creating dimension tables...
+2025-03-18 09:32:38,290 - INFO - Creating fact table...
+2025-03-18 09:32:38,311 - INFO - Fact and dimension tables created successfully.
+2025-03-18 09:32:39,687 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 09:32:49,814 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 09:32:49,815 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 09:32:49,816 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 09:32:56,122 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 09:32:56,123 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 09:32:56,123 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 09:33:02,100 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 09:33:02,101 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 09:33:02,102 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 09:33:07,729 - INFO - 793 out of 793 rows loaded.
+2025-03-18 09:33:07,730 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 09:33:07,731 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 09:33:16,336 - INFO - 628 out of 628 rows loaded.
+2025-03-18 09:33:16,337 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 09:33:16,338 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 09:33:23,807 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 09:33:23,808 - INFO - Table dim_products uploaded successfully.
+2025-03-18 09:33:23,808 - INFO - All tables pushed to BigQuery.
+2025-03-18 09:33:26,777 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 09:33:28,722 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 09:33:30,767 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 09:33:32,914 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 09:33:34,868 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 09:33:34,869 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 09:33:38,995 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 09:33:45,768 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 09:33:45,769 - INFO - Executing procedure: product_category_performance...
+2025-03-18 09:33:49,404 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 09:33:53,205 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 09:33:53,206 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 09:33:56,884 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 09:34:00,886 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 09:34:00,886 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 09:34:05,282 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 09:34:09,330 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 09:34:09,331 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 09:34:13,570 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 09:34:17,977 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 09:34:19,920 - INFO - Created procedure: aggregate_sales_by_month
+2025-03-18 09:34:22,287 - INFO - Created procedure: aggregate_sales_by_product
+2025-03-18 09:34:24,529 - INFO - Created procedure: aggregate_sales_by_category
+2025-03-18 09:34:26,680 - INFO - Created procedure: aggregate_sales_by_subcategory
+2025-03-18 09:34:28,933 - INFO - Created procedure: aggregate_revenue_by_region
+2025-03-18 09:34:28,933 - INFO - Executing procedure: aggregate_sales_by_month...
+2025-03-18 09:34:32,518 - INFO - Successfully executed procedure: aggregate_sales_by_month. Fetching results...
+2025-03-18 09:34:36,032 - INFO - Successfully fetched data from agg_sales_monthly.
+2025-03-18 09:34:36,032 - INFO - Executing procedure: aggregate_sales_by_product...
+2025-03-18 09:34:39,783 - INFO - Successfully executed procedure: aggregate_sales_by_product. Fetching results...
+2025-03-18 09:34:44,088 - INFO - Successfully fetched data from agg_sales_product.
+2025-03-18 09:34:44,088 - INFO - Executing procedure: aggregate_sales_by_category...
+2025-03-18 09:34:48,183 - INFO - Successfully executed procedure: aggregate_sales_by_category. Fetching results...
+2025-03-18 09:34:51,563 - INFO - Successfully fetched data from agg_sales_category.
+2025-03-18 09:34:51,564 - INFO - Executing procedure: aggregate_sales_by_subcategory...
+2025-03-18 09:34:55,658 - INFO - Successfully executed procedure: aggregate_sales_by_subcategory. Fetching results...
+2025-03-18 09:34:59,359 - INFO - Successfully fetched data from agg_sales_subcategory.
+2025-03-18 09:34:59,359 - INFO - Executing procedure: aggregate_revenue_by_region...
+2025-03-18 09:35:03,644 - INFO - Successfully executed procedure: aggregate_revenue_by_region. Fetching results...
+2025-03-18 09:35:08,309 - INFO - Successfully fetched data from agg_revenue_region.
+2025-03-18 09:35:28,284 - INFO - Partitioned table 'fact_sales_partitioned' created successfully.
+2025-03-18 09:35:50,855 - INFO - Partitioned & clustered table 'fact_sales_partitioned_clustered' created successfully.
+2025-03-18 09:35:59,352 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 09:36:02,937 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 09:36:06,424 - INFO - Data mart 'mart_shipping_logistics' created successfully.
