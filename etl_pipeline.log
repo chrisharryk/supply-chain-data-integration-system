@@ -550,3 +550,455 @@ Job ID: daebf035-7dc5-43aa-9130-c380fdf50869
 2025-03-18 09:35:59,352 - INFO - Data mart 'mart_inventory_analysis' created successfully.
 2025-03-18 09:36:02,937 - INFO - Data mart 'mart_order_fulfillment' created successfully.
 2025-03-18 09:36:06,424 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 19:20:26,703 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:20:26,788 - INFO - Removed 0 duplicate rows
+2025-03-18 19:20:26,809 - INFO - Data preprocessing completed successfully
+2025-03-18 19:20:26,809 - INFO - Creating dimension tables...
+2025-03-18 19:20:26,859 - INFO - Creating fact table...
+2025-03-18 19:20:26,899 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:21:19,713 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:21:19,778 - INFO - Removed 0 duplicate rows
+2025-03-18 19:21:19,789 - INFO - Data preprocessing completed successfully
+2025-03-18 19:21:19,790 - INFO - Creating dimension tables...
+2025-03-18 19:21:19,827 - INFO - Creating fact table...
+2025-03-18 19:21:19,854 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:22:57,687 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:22:57,757 - INFO - Removed 0 duplicate rows
+2025-03-18 19:22:57,769 - INFO - Data preprocessing completed successfully
+2025-03-18 19:22:57,769 - INFO - Creating dimension tables...
+2025-03-18 19:22:57,807 - INFO - Creating fact table...
+2025-03-18 19:22:57,833 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:23:27,888 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:23:27,889 - ERROR - Data preprocessing failed: [Errno 2] No such file or directory: './data/train.csv'
+2025-03-18 19:23:27,889 - INFO - Creating dimension tables...
+2025-03-18 19:23:27,889 - ERROR - Error creating fact/dimension tables: 'NoneType' object is not subscriptable
+2025-03-18 19:23:39,963 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:23:39,964 - ERROR - Data preprocessing failed: [Errno 2] No such file or directory: './data/train.csv'
+2025-03-18 19:23:39,964 - INFO - Creating dimension tables...
+2025-03-18 19:23:39,964 - ERROR - Error creating fact/dimension tables: 'NoneType' object is not subscriptable
+2025-03-18 19:27:24,313 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:27:27,031 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:27:27,031 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:27:27,075 - INFO - Removed 0 duplicate rows
+2025-03-18 19:27:27,084 - INFO - Data preprocessing completed successfully
+2025-03-18 19:27:27,084 - INFO - Creating dimension tables...
+2025-03-18 19:27:27,113 - INFO - Creating fact table...
+2025-03-18 19:27:27,135 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:30:14,483 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:30:17,577 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:30:17,578 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:30:17,646 - INFO - Removed 0 duplicate rows
+2025-03-18 19:30:17,660 - INFO - Data preprocessing completed successfully
+2025-03-18 19:30:17,660 - INFO - Creating dimension tables...
+2025-03-18 19:30:17,705 - INFO - Creating fact table...
+2025-03-18 19:30:17,745 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:31:58,771 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:32:01,643 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:32:01,644 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:32:01,707 - INFO - Removed 0 duplicate rows
+2025-03-18 19:32:01,721 - INFO - Data preprocessing completed successfully
+2025-03-18 19:32:01,721 - INFO - Creating dimension tables...
+2025-03-18 19:32:01,765 - INFO - Creating fact table...
+2025-03-18 19:32:01,802 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:35:19,388 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:35:25,612 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:35:25,612 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:35:25,679 - INFO - Removed 0 duplicate rows
+2025-03-18 19:35:25,694 - INFO - Data preprocessing completed successfully
+2025-03-18 19:35:25,694 - INFO - Creating dimension tables...
+2025-03-18 19:35:25,740 - INFO - Creating fact table...
+2025-03-18 19:35:25,779 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:35:29,929 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 19:35:36,934 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 19:35:36,936 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 19:35:36,937 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 19:35:43,116 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 19:35:43,116 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 19:35:43,116 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 19:35:47,978 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 19:35:47,979 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 19:35:47,979 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 19:35:52,301 - INFO - 793 out of 793 rows loaded.
+2025-03-18 19:35:52,303 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 19:35:52,303 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 19:35:57,532 - INFO - 628 out of 628 rows loaded.
+2025-03-18 19:35:57,533 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 19:35:57,534 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 19:36:03,891 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 19:36:03,892 - INFO - Table dim_products uploaded successfully.
+2025-03-18 19:36:03,892 - INFO - All tables pushed to BigQuery.
+2025-03-18 19:42:21,300 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:42:21,346 - INFO - Removed 0 duplicate rows
+2025-03-18 19:42:21,355 - INFO - Data preprocessing completed successfully
+2025-03-18 19:42:21,355 - INFO - Creating dimension tables...
+2025-03-18 19:42:21,384 - INFO - Creating fact table...
+2025-03-18 19:42:21,405 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:42:43,202 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:42:43,270 - INFO - Removed 0 duplicate rows
+2025-03-18 19:42:43,291 - INFO - Data preprocessing completed successfully
+2025-03-18 19:42:43,291 - INFO - Creating dimension tables...
+2025-03-18 19:42:43,340 - INFO - Creating fact table...
+2025-03-18 19:42:43,370 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:42:52,180 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:42:52,218 - INFO - Removed 0 duplicate rows
+2025-03-18 19:42:52,227 - INFO - Data preprocessing completed successfully
+2025-03-18 19:42:52,227 - INFO - Creating dimension tables...
+2025-03-18 19:42:52,255 - INFO - Creating fact table...
+2025-03-18 19:42:52,276 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:44:02,512 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:44:04,853 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:44:04,854 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:44:04,933 - INFO - Removed 0 duplicate rows
+2025-03-18 19:44:04,942 - INFO - Data preprocessing completed successfully
+2025-03-18 19:44:04,942 - INFO - Creating dimension tables...
+2025-03-18 19:44:04,975 - INFO - Creating fact table...
+2025-03-18 19:44:04,996 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:44:08,664 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:44:08,745 - INFO - Removed 0 duplicate rows
+2025-03-18 19:44:08,752 - INFO - Data preprocessing completed successfully
+2025-03-18 19:44:08,752 - INFO - Creating dimension tables...
+2025-03-18 19:44:08,781 - INFO - Creating fact table...
+2025-03-18 19:44:08,802 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:44:10,135 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 19:44:15,162 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 19:44:15,164 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 19:44:15,164 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 19:44:21,530 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 19:44:21,532 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 19:44:21,532 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 19:44:30,243 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 19:44:30,245 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 19:44:30,245 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 19:44:36,071 - INFO - 793 out of 793 rows loaded.
+2025-03-18 19:44:36,072 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 19:44:36,073 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 19:44:41,182 - INFO - 628 out of 628 rows loaded.
+2025-03-18 19:44:41,183 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 19:44:41,184 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 19:44:46,534 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 19:44:46,536 - INFO - Table dim_products uploaded successfully.
+2025-03-18 19:44:46,536 - INFO - All tables pushed to BigQuery.
+2025-03-18 19:45:55,445 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:45:55,491 - INFO - Removed 0 duplicate rows
+2025-03-18 19:45:55,501 - INFO - Data preprocessing completed successfully
+2025-03-18 19:45:55,501 - INFO - Creating dimension tables...
+2025-03-18 19:45:55,531 - INFO - Creating fact table...
+2025-03-18 19:45:55,553 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:46:44,209 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:46:44,256 - INFO - Removed 0 duplicate rows
+2025-03-18 19:46:44,266 - INFO - Data preprocessing completed successfully
+2025-03-18 19:46:44,266 - INFO - Creating dimension tables...
+2025-03-18 19:46:44,303 - INFO - Creating fact table...
+2025-03-18 19:46:44,332 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:47:27,050 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:47:27,091 - INFO - Removed 0 duplicate rows
+2025-03-18 19:47:27,099 - INFO - Data preprocessing completed successfully
+2025-03-18 19:47:27,099 - INFO - Creating dimension tables...
+2025-03-18 19:47:27,127 - INFO - Creating fact table...
+2025-03-18 19:47:27,148 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:47:40,181 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:47:40,304 - INFO - Removed 0 duplicate rows
+2025-03-18 19:47:40,317 - INFO - Data preprocessing completed successfully
+2025-03-18 19:47:40,317 - INFO - Creating dimension tables...
+2025-03-18 19:47:40,352 - INFO - Creating fact table...
+2025-03-18 19:47:40,378 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:48:03,976 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:48:04,036 - INFO - Removed 0 duplicate rows
+2025-03-18 19:48:04,047 - INFO - Data preprocessing completed successfully
+2025-03-18 19:48:04,047 - INFO - Creating dimension tables...
+2025-03-18 19:48:04,090 - INFO - Creating fact table...
+2025-03-18 19:48:04,170 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:48:04,333 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:48:04,385 - INFO - Removed 0 duplicate rows
+2025-03-18 19:48:04,394 - INFO - Data preprocessing completed successfully
+2025-03-18 19:48:04,394 - INFO - Creating dimension tables...
+2025-03-18 19:48:04,427 - INFO - Creating fact table...
+2025-03-18 19:48:04,455 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:55:57,243 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:55:57,285 - INFO - Removed 0 duplicate rows
+2025-03-18 19:55:57,294 - INFO - Data preprocessing completed successfully
+2025-03-18 19:55:57,294 - INFO - Creating dimension tables...
+2025-03-18 19:55:57,326 - INFO - Creating fact table...
+2025-03-18 19:55:57,350 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:56:18,523 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 19:56:20,851 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 19:56:20,851 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:56:20,918 - INFO - Removed 0 duplicate rows
+2025-03-18 19:56:20,926 - INFO - Data preprocessing completed successfully
+2025-03-18 19:56:20,926 - INFO - Creating dimension tables...
+2025-03-18 19:56:20,958 - INFO - Creating fact table...
+2025-03-18 19:56:20,980 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:56:25,987 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 19:56:26,062 - INFO - Removed 0 duplicate rows
+2025-03-18 19:56:26,069 - INFO - Data preprocessing completed successfully
+2025-03-18 19:56:26,069 - INFO - Creating dimension tables...
+2025-03-18 19:56:26,096 - INFO - Creating fact table...
+2025-03-18 19:56:26,118 - INFO - Fact and dimension tables created successfully.
+2025-03-18 19:56:27,566 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 19:56:33,183 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 19:56:33,185 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 19:56:33,185 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 19:56:38,812 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 19:56:38,813 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 19:56:38,813 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 19:56:43,436 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 19:56:43,437 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 19:56:43,437 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 19:56:48,838 - INFO - 793 out of 793 rows loaded.
+2025-03-18 19:56:48,840 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 19:56:48,840 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 19:56:54,677 - INFO - 628 out of 628 rows loaded.
+2025-03-18 19:56:54,678 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 19:56:54,679 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 19:57:00,939 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 19:57:00,941 - INFO - Table dim_products uploaded successfully.
+2025-03-18 19:57:00,941 - INFO - All tables pushed to BigQuery.
+2025-03-18 20:05:51,192 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:05:51,278 - INFO - Removed 0 duplicate rows
+2025-03-18 20:05:51,296 - INFO - Data preprocessing completed successfully
+2025-03-18 20:05:51,296 - INFO - Creating dimension tables...
+2025-03-18 20:05:51,358 - INFO - Creating fact table...
+2025-03-18 20:05:51,410 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:10:55,304 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:10:55,348 - INFO - Removed 0 duplicate rows
+2025-03-18 20:10:55,359 - INFO - Data preprocessing completed successfully
+2025-03-18 20:10:55,359 - INFO - Creating dimension tables...
+2025-03-18 20:10:55,397 - INFO - Creating fact table...
+2025-03-18 20:10:55,423 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:11:04,672 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:11:08,088 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:11:11,318 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:11:14,876 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:11:19,569 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:11:23,330 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 20:12:20,837 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:12:20,941 - INFO - Removed 0 duplicate rows
+2025-03-18 20:12:20,961 - INFO - Data preprocessing completed successfully
+2025-03-18 20:12:20,961 - INFO - Creating dimension tables...
+2025-03-18 20:12:21,024 - INFO - Creating fact table...
+2025-03-18 20:12:21,071 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:12:34,113 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:12:34,230 - INFO - Removed 0 duplicate rows
+2025-03-18 20:12:34,250 - INFO - Data preprocessing completed successfully
+2025-03-18 20:12:34,250 - INFO - Creating dimension tables...
+2025-03-18 20:12:34,315 - INFO - Creating fact table...
+2025-03-18 20:12:34,367 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:12:45,033 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:12:48,230 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:12:51,772 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:12:54,919 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:13:00,523 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:13:04,446 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 20:14:37,290 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:14:37,383 - INFO - Removed 0 duplicate rows
+2025-03-18 20:14:37,403 - INFO - Data preprocessing completed successfully
+2025-03-18 20:14:37,404 - INFO - Creating dimension tables...
+2025-03-18 20:14:37,482 - INFO - Creating fact table...
+2025-03-18 20:14:37,531 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:14:39,613 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:14:39,705 - INFO - Removed 0 duplicate rows
+2025-03-18 20:14:39,726 - INFO - Data preprocessing completed successfully
+2025-03-18 20:14:39,726 - INFO - Creating dimension tables...
+2025-03-18 20:14:40,219 - INFO - Creating fact table...
+2025-03-18 20:14:40,509 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:14:44,420 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 20:14:44,512 - INFO - Removed 0 duplicate rows
+2025-03-18 20:14:44,531 - INFO - Data preprocessing completed successfully
+2025-03-18 20:14:44,531 - INFO - Creating dimension tables...
+2025-03-18 20:14:44,597 - INFO - Creating fact table...
+2025-03-18 20:14:44,650 - INFO - Fact and dimension tables created successfully.
+2025-03-18 20:16:43,858 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:16:46,937 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:16:52,545 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:16:55,891 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:17:00,053 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:17:04,946 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 20:25:34,270 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:25:37,344 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:25:40,721 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:25:44,236 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:25:48,932 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:25:53,875 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 20:29:49,354 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:29:52,299 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:29:55,407 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:29:58,301 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:30:02,116 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:30:06,153 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 20:34:03,946 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 20:34:07,395 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 20:34:10,671 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 20:34:14,231 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 20:34:18,678 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 20:34:23,802 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 21:29:33,330 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:29:36,315 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:29:39,035 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:29:42,353 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 21:29:46,613 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 21:29:51,823 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 21:33:21,889 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:33:25,154 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:33:28,230 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:33:31,505 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 21:33:35,214 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 21:33:39,637 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 21:37:42,718 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:37:45,901 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:37:49,195 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:37:52,850 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 21:37:57,327 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 21:38:01,840 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 21:42:47,439 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:42:51,298 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:42:54,803 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:50:35,378 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:50:38,888 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:50:42,369 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:51:08,278 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:51:11,479 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:51:14,721 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 21:52:22,313 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 21:52:25,708 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 21:52:28,980 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 22:01:41,825 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 22:01:46,164 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 22:01:50,336 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 22:12:10,356 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 22:12:12,606 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 22:12:15,811 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 22:12:18,446 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 22:12:21,820 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 22:12:21,820 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:12:26,119 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:12:30,680 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 22:12:30,680 - INFO - Executing procedure: product_category_performance...
+2025-03-18 22:12:35,238 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 22:12:38,774 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 22:12:38,774 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 22:12:43,629 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 22:12:46,813 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 22:12:46,813 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 22:12:51,131 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 22:12:54,292 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 22:12:54,292 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 22:12:57,917 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 22:13:01,237 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 22:13:01,238 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:13:04,825 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:13:05,338 - ERROR - Error executing procedure 'calculate_lead_time': 400 Syntax error: Expected keyword BY but got identifier "ID" at [1:60]; reason: invalidQuery, location: query, message: Syntax error: Expected keyword BY but got identifier "ID" at [1:60]
+
+Location: US
+Job ID: 53c1378d-0f38-48a9-a6bc-69fd763bff24
+
+2025-03-18 22:13:06,280 - ERROR - Error fetching data mart '       order_key        Order ID  lead_time_days
+0             75  CA-2015-105249               0
+1             75  CA-2015-105249               0
+2             75  CA-2015-105249               0
+3             75  CA-2015-105249               0
+4             75  CA-2015-105249               0
+...          ...             ...             ...
+22608       4873  US-2018-156083               7
+22609       4873  US-2018-156083               7
+22610       4885  US-2018-160143               7
+22611       4912  US-2018-167570               7
+22612       4912  US-2018-167570               7
+
+[22613 rows x 3 columns]': 400 Syntax error: Unclosed identifier literal at [1:15]; reason: invalidQuery, location: query, message: Syntax error: Unclosed identifier literal at [1:15]
+
+Location: US
+Job ID: 01ff2ede-a8a8-450a-b18a-2a32e2b231e1
+
+2025-03-18 22:17:13,276 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 22:17:16,757 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 22:17:19,301 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 22:17:22,185 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 22:17:25,024 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 22:17:25,024 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:17:28,608 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:17:34,041 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 22:17:34,041 - INFO - Executing procedure: product_category_performance...
+2025-03-18 22:17:37,721 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 22:17:41,622 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 22:17:41,622 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 22:17:45,823 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 22:17:49,947 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 22:17:49,948 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 22:17:53,855 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 22:17:57,081 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 22:17:57,081 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 22:18:01,589 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 22:18:05,927 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 22:18:05,927 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:18:09,722 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:18:10,126 - ERROR - Error executing procedure 'calculate_lead_time': 400 Syntax error: Expected keyword BY but got identifier "ID" at [1:60]; reason: invalidQuery, location: query, message: Syntax error: Expected keyword BY but got identifier "ID" at [1:60]
+
+Location: US
+Job ID: c9769759-7862-4588-aac3-6ec112a37b88
+
+2025-03-18 22:20:49,697 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 22:20:51,648 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 22:20:53,745 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 22:20:55,705 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 22:20:57,823 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 22:20:57,824 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:21:02,357 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:21:05,152 - ERROR - Error executing procedure 'calculate_lead_time': cannot schedule new futures after interpreter shutdown
+2025-03-18 22:21:05,153 - INFO - Executing procedure: product_category_performance...
+2025-03-18 22:21:10,477 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 22:21:13,699 - ERROR - Error executing procedure 'product_category_performance': cannot schedule new futures after interpreter shutdown
+2025-03-18 22:21:13,699 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 22:21:17,521 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 22:21:20,210 - ERROR - Error executing procedure 'product_subcategory_performance': cannot schedule new futures after interpreter shutdown
+2025-03-18 22:21:20,210 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 22:21:23,639 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 22:21:25,892 - ERROR - Error executing procedure 'avg_order_value_per_category': cannot schedule new futures after interpreter shutdown
+2025-03-18 22:21:25,893 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 22:21:29,851 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 22:21:32,316 - ERROR - Error executing procedure 'avg_order_frequency_by_customer': cannot schedule new futures after interpreter shutdown
+2025-03-18 22:22:01,142 - INFO - Data mart 'mart_inventory_analysis' created successfully.
+2025-03-18 22:22:04,071 - INFO - Data mart 'mart_order_fulfillment' created successfully.
+2025-03-18 22:22:07,514 - INFO - Data mart 'mart_shipping_logistics' created successfully.
+2025-03-18 22:22:11,545 - INFO - Fetched data mart: mart_inventory_analysis
+2025-03-18 22:22:16,706 - INFO - Fetched data mart: mart_order_fulfillment
+2025-03-18 22:22:23,412 - INFO - Fetched data mart: mart_shipping_logistics
+2025-03-18 22:22:33,471 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 22:22:36,395 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 22:22:38,284 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 22:22:41,619 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 22:22:45,393 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 22:22:45,393 - INFO - Executing procedure: calculate_lead_time...
+2025-03-18 22:22:49,927 - INFO - Successfully executed procedure: calculate_lead_time. Fetching results...
+2025-03-18 22:22:54,804 - INFO - Successfully fetched data from kpi_lead_time.
+2025-03-18 22:22:54,804 - INFO - Executing procedure: product_category_performance...
+2025-03-18 22:22:58,309 - INFO - Successfully executed procedure: product_category_performance. Fetching results...
+2025-03-18 22:23:02,057 - INFO - Successfully fetched data from kpi_product_category_performance.
+2025-03-18 22:23:02,057 - INFO - Executing procedure: product_subcategory_performance...
+2025-03-18 22:23:05,648 - INFO - Successfully executed procedure: product_subcategory_performance. Fetching results...
+2025-03-18 22:23:09,122 - INFO - Successfully fetched data from kpi_product_subcategory_performance.
+2025-03-18 22:23:09,122 - INFO - Executing procedure: avg_order_value_per_category...
+2025-03-18 22:23:12,682 - INFO - Successfully executed procedure: avg_order_value_per_category. Fetching results...
+2025-03-18 22:23:16,065 - INFO - Successfully fetched data from kpi_avg_order_value_per_category.
+2025-03-18 22:23:16,065 - INFO - Executing procedure: avg_order_frequency_by_customer...
+2025-03-18 22:23:19,984 - INFO - Successfully executed procedure: avg_order_frequency_by_customer. Fetching results...
+2025-03-18 22:23:23,492 - INFO - Successfully fetched data from kpi_avg_order_frequency_by_customer.
+2025-03-18 22:25:38,331 - INFO - Created procedure: aggregate_sales_by_month
+2025-03-18 22:25:40,102 - INFO - Created procedure: aggregate_sales_by_product
+2025-03-18 22:25:41,883 - INFO - Created procedure: aggregate_sales_by_category
+2025-03-18 22:25:43,755 - INFO - Created procedure: aggregate_sales_by_subcategory
+2025-03-18 22:25:45,920 - INFO - Created procedure: aggregate_revenue_by_region
+2025-03-18 22:25:45,920 - INFO - Executing procedure: aggregate_sales_by_month...
+2025-03-18 22:25:49,337 - INFO - Successfully executed procedure: aggregate_sales_by_month. Fetching results...
+2025-03-18 22:25:52,686 - INFO - Successfully fetched data from agg_sales_monthly.
+2025-03-18 22:25:52,686 - INFO - Executing procedure: aggregate_sales_by_product...
+2025-03-18 22:25:56,148 - INFO - Successfully executed procedure: aggregate_sales_by_product. Fetching results...
+2025-03-18 22:25:59,534 - INFO - Successfully fetched data from agg_sales_product.
+2025-03-18 22:25:59,535 - INFO - Executing procedure: aggregate_sales_by_category...
+2025-03-18 22:26:03,874 - INFO - Successfully executed procedure: aggregate_sales_by_category. Fetching results...
+2025-03-18 22:26:06,910 - INFO - Successfully fetched data from agg_sales_category.
+2025-03-18 22:26:06,910 - INFO - Executing procedure: aggregate_sales_by_subcategory...
+2025-03-18 22:26:10,300 - INFO - Successfully executed procedure: aggregate_sales_by_subcategory. Fetching results...
+2025-03-18 22:26:13,527 - INFO - Successfully fetched data from agg_sales_subcategory.
+2025-03-18 22:26:13,527 - INFO - Executing procedure: aggregate_revenue_by_region...
+2025-03-18 22:26:17,050 - INFO - Successfully executed procedure: aggregate_revenue_by_region. Fetching results...
+2025-03-18 22:26:20,204 - INFO - Successfully fetched data from agg_revenue_region.
