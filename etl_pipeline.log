@@ -26,3 +26,176 @@
 2025-03-18 05:35:20,414 - INFO - Loading dataset from ./data/train.csv
 2025-03-18 05:35:20,467 - INFO - Removed 0 duplicate rows
 2025-03-18 05:35:20,475 - INFO - Data preprocessing completed successfully
+2025-03-18 05:46:21,419 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:46:23,530 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:46:23,530 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:46:23,577 - INFO - Removed 0 duplicate rows
+2025-03-18 05:46:23,587 - INFO - Data preprocessing completed successfully
+2025-03-18 05:46:23,587 - INFO - Creating dimension tables...
+2025-03-18 05:46:23,611 - INFO - Creating fact table...
+2025-03-18 05:46:23,633 - INFO - Fact and dimension tables created successfully.
+2025-03-18 05:59:21,607 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 05:59:23,716 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 05:59:23,716 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 05:59:23,760 - INFO - Removed 0 duplicate rows
+2025-03-18 05:59:23,768 - INFO - Data preprocessing completed successfully
+2025-03-18 05:59:23,768 - INFO - Creating dimension tables...
+2025-03-18 05:59:23,782 - INFO - Creating fact table...
+2025-03-18 05:59:23,799 - INFO - Fact and dimension tables created successfully.
+2025-03-18 05:59:25,329 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 05:59:32,452 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 05:59:32,453 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 05:59:32,453 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 05:59:37,948 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 05:59:37,949 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 05:59:37,949 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 05:59:43,146 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 05:59:43,148 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 05:59:43,148 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 05:59:47,311 - INFO - 793 out of 793 rows loaded.
+2025-03-18 05:59:47,313 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 05:59:47,313 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 05:59:52,092 - INFO - 628 out of 628 rows loaded.
+2025-03-18 05:59:52,094 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 05:59:52,094 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 05:59:56,435 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 05:59:56,437 - INFO - Table dim_products uploaded successfully.
+2025-03-18 05:59:56,437 - INFO - All tables pushed to BigQuery.
+2025-03-18 06:15:38,885 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 06:15:40,938 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 06:15:40,938 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:15:40,981 - INFO - Removed 0 duplicate rows
+2025-03-18 06:15:40,988 - INFO - Data preprocessing completed successfully
+2025-03-18 06:15:40,988 - INFO - Creating dimension tables...
+2025-03-18 06:15:41,002 - INFO - Creating fact table...
+2025-03-18 06:15:41,021 - INFO - Fact and dimension tables created successfully.
+2025-03-18 06:15:42,104 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 06:15:48,464 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 06:15:48,466 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 06:15:48,466 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 06:15:53,612 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 06:15:53,614 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 06:15:53,614 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 06:15:58,464 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 06:15:58,465 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 06:15:58,465 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 06:16:03,624 - INFO - 793 out of 793 rows loaded.
+2025-03-18 06:16:03,625 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 06:16:03,626 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 06:16:08,418 - INFO - 628 out of 628 rows loaded.
+2025-03-18 06:16:08,420 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 06:16:08,420 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 06:16:13,343 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 06:16:13,344 - INFO - Table dim_products uploaded successfully.
+2025-03-18 06:16:13,344 - INFO - All tables pushed to BigQuery.
+2025-03-18 06:16:14,484 - ERROR - Error creating procedure 'calculate_lead_time': 400 Error validating procedure body (add OPTIONS(strict_mode=false) to suppress): Query error: Query error: No matching signature for function PARSE_DATE
+  Argument types: STRING, DATETIME
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATETIME to expected type STRING at [5:27] at [2:13] at [2:9]
+
+Location: US
+Job ID: e7fbb6da-02b7-4cda-9301-ddf017fcc3fb
+
+2025-03-18 06:16:16,260 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 06:16:17,972 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 06:16:19,739 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 06:16:21,569 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 06:21:21,432 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:21:21,472 - INFO - Removed 0 duplicate rows
+2025-03-18 06:21:21,481 - INFO - Data preprocessing completed successfully
+2025-03-18 06:21:21,481 - INFO - Creating dimension tables...
+2025-03-18 06:21:21,496 - INFO - Creating fact table...
+2025-03-18 06:21:21,515 - INFO - Fact and dimension tables created successfully.
+2025-03-18 06:21:23,792 - ERROR - Error executing procedure 'calculate_lead_time': 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/learned-spider-453507-p8/queries/d8bfa5b2-2826-4991-910c-0a70a69700e6?maxResults=0&location=US&prettyPrint=false: Query error: No matching signature for function PARSE_DATE
+  Argument types: STRING, DATETIME
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATETIME to expected type STRING at [5:15] at [learned-spider-453507-p8.sales_analysis.calculate_lead_time:2:3]
+
+Location: US
+Job ID: d8bfa5b2-2826-4991-910c-0a70a69700e6
+
+2025-03-18 06:22:27,249 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:22:27,328 - INFO - Removed 0 duplicate rows
+2025-03-18 06:22:27,338 - INFO - Data preprocessing completed successfully
+2025-03-18 06:22:27,338 - INFO - Creating dimension tables...
+2025-03-18 06:22:27,355 - INFO - Creating fact table...
+2025-03-18 06:22:27,377 - INFO - Fact and dimension tables created successfully.
+2025-03-18 06:22:28,815 - ERROR - Error executing procedure 'calculate_lead_time': 400 GET https://bigquery.googleapis.com/bigquery/v2/projects/learned-spider-453507-p8/queries/0f5fe5fd-e32c-4934-b1f7-3492a391413e?maxResults=0&location=US&prettyPrint=false: Query error: No matching signature for function PARSE_DATE
+  Argument types: STRING, DATETIME
+  Signature: PARSE_DATE(STRING, STRING)
+    Argument 2: Unable to coerce type DATETIME to expected type STRING at [5:15] at [learned-spider-453507-p8.sales_analysis.calculate_lead_time:2:3]
+
+Location: US
+Job ID: 0f5fe5fd-e32c-4934-b1f7-3492a391413e
+
+2025-03-18 06:26:58,467 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:26:58,506 - INFO - Removed 0 duplicate rows
+2025-03-18 06:26:58,515 - INFO - Data preprocessing completed successfully
+2025-03-18 06:26:58,515 - INFO - Creating dimension tables...
+2025-03-18 06:26:58,552 - INFO - Creating fact table...
+2025-03-18 06:26:58,557 - ERROR - Error creating fact/dimension tables: You are trying to merge on object and datetime64[ns] columns for key 'Ship Date'. If you wish to proceed you should use pd.concat
+2025-03-18 06:26:59,664 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 06:27:00,985 - ERROR - Error pushing tables to BigQuery: 'NoneType' object has no attribute 'columns'
+2025-03-18 06:27:03,353 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 06:27:05,098 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 06:27:07,161 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 06:27:08,962 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 06:27:10,700 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 06:28:14,544 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 06:28:17,537 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 06:28:17,537 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:28:17,582 - INFO - Removed 0 duplicate rows
+2025-03-18 06:28:17,591 - INFO - Data preprocessing completed successfully
+2025-03-18 06:28:17,591 - INFO - Creating dimension tables...
+2025-03-18 06:28:17,617 - INFO - Creating fact table...
+2025-03-18 06:28:17,621 - ERROR - Error creating fact/dimension tables: You are trying to merge on object and datetime64[ns] columns for key 'Ship Date'. If you wish to proceed you should use pd.concat
+2025-03-18 06:28:18,716 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 06:28:19,992 - ERROR - Error pushing tables to BigQuery: 'NoneType' object has no attribute 'columns'
+2025-03-18 06:28:22,176 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 06:28:23,950 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 06:28:25,756 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 06:28:27,502 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 06:28:29,254 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 06:31:10,191 - INFO - fetching dataset rohitsahoo/sales-forecasting from kaggle
+2025-03-18 06:31:12,298 - INFO - dataset rohitsahoo/sales-forecasting succesfully downloaded
+2025-03-18 06:31:12,298 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:31:12,342 - INFO - Removed 0 duplicate rows
+2025-03-18 06:31:12,349 - INFO - Data preprocessing completed successfully
+2025-03-18 06:31:12,350 - INFO - Creating dimension tables...
+2025-03-18 06:31:12,382 - INFO - Creating fact table...
+2025-03-18 06:31:12,402 - INFO - Fact and dimension tables created successfully.
+2025-03-18 06:31:13,477 - INFO - Pushing fact_sales to BigQuery...
+2025-03-18 06:31:19,466 - INFO - 9799 out of 9799 rows loaded.
+2025-03-18 06:31:19,467 - INFO - Table fact_sales uploaded successfully.
+2025-03-18 06:31:19,468 - INFO - Pushing dim_orders to BigQuery...
+2025-03-18 06:31:24,094 - INFO - 4922 out of 4922 rows loaded.
+2025-03-18 06:31:24,095 - INFO - Table dim_orders uploaded successfully.
+2025-03-18 06:31:24,095 - INFO - Pushing dim_shipping to BigQuery...
+2025-03-18 06:31:29,397 - INFO - 2582 out of 2582 rows loaded.
+2025-03-18 06:31:29,398 - INFO - Table dim_shipping uploaded successfully.
+2025-03-18 06:31:29,398 - INFO - Pushing dim_customers to BigQuery...
+2025-03-18 06:31:34,208 - INFO - 793 out of 793 rows loaded.
+2025-03-18 06:31:34,210 - INFO - Table dim_customers uploaded successfully.
+2025-03-18 06:31:34,210 - INFO - Pushing dim_regions to BigQuery...
+2025-03-18 06:31:39,042 - INFO - 628 out of 628 rows loaded.
+2025-03-18 06:31:39,044 - INFO - Table dim_regions uploaded successfully.
+2025-03-18 06:31:39,044 - INFO - Pushing dim_products to BigQuery...
+2025-03-18 06:31:43,901 - INFO - 1893 out of 1893 rows loaded.
+2025-03-18 06:31:43,902 - INFO - Table dim_products uploaded successfully.
+2025-03-18 06:31:43,902 - INFO - All tables pushed to BigQuery.
+2025-03-18 06:31:46,022 - INFO - Procedure 'calculate_lead_time' created successfully.
+2025-03-18 06:31:47,788 - INFO - Procedure 'product_category_performance' created successfully.
+2025-03-18 06:31:49,598 - INFO - Procedure 'product_subcategory_performance' created successfully.
+2025-03-18 06:31:51,344 - INFO - Procedure 'avg_order_value_per_category' created successfully.
+2025-03-18 06:31:53,503 - INFO - Procedure 'avg_order_frequency_by_customer' created successfully.
+2025-03-18 06:33:35,565 - INFO - Loading dataset from ./data/train.csv
+2025-03-18 06:33:35,604 - INFO - Removed 0 duplicate rows
+2025-03-18 06:33:35,614 - INFO - Data preprocessing completed successfully
+2025-03-18 06:33:35,614 - INFO - Creating dimension tables...
+2025-03-18 06:33:35,643 - INFO - Creating fact table...
+2025-03-18 06:33:35,664 - INFO - Fact and dimension tables created successfully.
+2025-03-18 06:33:41,636 - INFO - Executed procedure: calculate_lead_time
+2025-03-18 06:33:47,297 - INFO - Executed procedure: product_category_performance
+2025-03-18 06:33:52,805 - INFO - Executed procedure: product_subcategory_performance
+2025-03-18 06:33:57,740 - INFO - Executed procedure: avg_order_value_per_category
+2025-03-18 06:34:03,458 - INFO - Executed procedure: avg_order_frequency_by_customer
