@@ -216,7 +216,7 @@ def main():
 
                 for agg_name, df_agg in agg_results.items():
                     st.subheader(f"{agg_name.replace('_', ' ').title()}")
-                    st.dataframe(df_agg.head(10))
+                    st.dataframe(df_agg)
 
                     # Aggregation Charts
                     if "total_sales" in df_agg.columns:

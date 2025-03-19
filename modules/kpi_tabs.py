@@ -29,10 +29,13 @@ def create_kpi_procedures():
             SELECT 
                 f.order_key, 
                 d.`Order ID`, 
-                DATE_DIFF(s.`Ship Date`, d.`Order Date`, DAY) AS lead_time_days
+                p.`Product ID`,
+                DATE_DIFF(MAX(s.`Ship Date`), MIN(d.`Order Date`), DAY) AS lead_time_days
             FROM {DATASET_ID}.fact_sales f    
             LEFT JOIN {DATASET_ID}.dim_orders d ON f.order_key = d.order_key
-            LEFT JOIN {DATASET_ID}.dim_shipping s ON f.ship_key = s.ship_key;
+            LEFT JOIN {DATASET_ID}.dim_shipping s ON f.ship_key = s.ship_key
+            LEFT JOIN {DATASET_ID}.dim_products p ON f.product_key = p.product_key
+            GROUP BY f.order_key, d.`Order ID`, p.`Product ID`;
         END;""",
         
         "product_category_performance": f"""CREATE OR REPLACE PROCEDURE {DATASET_ID}.product_category_performance()
