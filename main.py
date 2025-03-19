@@ -29,7 +29,7 @@ def main():
     12. fetching data marts
     """
 
-    # Initialize session state
+    # Initializing session state for pulling and pre-processing data
     if "step_1_done" not in st.session_state:
         st.session_state.step_1_done = False
     if "step_2_3_done" not in st.session_state:
