@@ -1,3 +1,4 @@
+import time
 from matplotlib import pyplot as plt
 import streamlit as st
 import seaborn as sns
@@ -40,34 +41,107 @@ def main():
     st.title('Supply Chain Analytics Dashboard')
     st.sidebar.title("Supply Chain Analysis")
     # main sections
-    section = st.sidebar.radio("Go to", ["ETL", "EDA", "Schema", "Analysis"])
+    section = st.sidebar.radio("Go to", ["Home", "ETL", "EDA", "Schema", "Analysis"])
 
-    if section == 'ETL':
+    # Landing Page
+    if section == "Home":
+        st.markdown("**An integrated ETL pipeline for analyzing sales, inventory, and product performance.**")
+
+        st.header("Overview")
+        st.markdown("""
+        This dashboard provides key insights into supply chain operations by integrating and analyzing sales data. 
+        It helps track performance, optimize inventory, and improve vendor relationships.
+        """)
+
+        st.header("Insights & Reports")
+
+        st.subheader("Key Performance Indicators (KPIs)")
+        st.markdown("""
+        - Monitor **total sales, order count, average order value**, and other critical metrics.
+        - Analyze **order fulfillment efficiency and lead times**.
+        """)
+
+        st.subheader("Aggregations & Trends")
+        st.markdown("""
+        - View **monthly sales trends** and **customer segment performance**.
+        - Identify top-selling products and demand patterns.
+        """)
+
+        st.subheader("Data Marts & Advanced Insights")
+        st.markdown("""
+        - Get insights from **order fulfillment**, **inventory levels**, and **shipping logistics**.
+        - Utilize partitioning and clustering for **query performance optimization**.
+        """)
+
+        st.subheader('Performance Optimization')
+        st.markdown("""
+        To ensure efficient querying and cost-effective data retrieval, I have implemented:  
+        - **Partitioning**: Fact tables are partitioned based on date fields to optimize query performance and reduce scan costs.  
+        - **Clustering**: Frequently queried columns are clustered to improve filtering and sorting speed.  
+        """)
+
+        st.markdown("---")
+        st.markdown("**Made by Chris Harry K.**")
+
+    elif section == 'ETL':
         # 1. fetching data from API
         dataset_link = st.text_input('Enter the Kaggle dataset link:')
-        if st.button('Fetch Data'):
+        if "step_1_done" not in st.session_state:
+            st.session_state.step_1_done = False
+
+        if "fetch_clicked" not in st.session_state:
+            st.session_state.fetch_clicked = False
+
+        if st.button('Fetch Data') and not st.session_state.fetch_clicked:
             if dataset_link:
+                st.session_state.fetch_clicked = True  # Prevent duplicate execution
                 fetch_kaggle_data(dataset_link)
                 st.success(f'Data fetched from {dataset_link}')
                 st.session_state.step_1_done = True
             else:
                 st.error('Please enter a valid link')
 
+        if st.session_state.step_1_done:
+            with st.form("glance_data"):
+                choice = st.radio("Want to glance at the data?", ("Yes", "No"))
+                submitted = st.form_submit_button("Submit")
+
+            if submitted and choice == 'Yes':
+                sample_df = pd.read_csv('data/train.csv')
+                st.dataframe(sample_df.head())
+
         # 2 & 3. preprocessing + creating facts and dims
         if st.session_state.step_1_done:
-            csv_path = "./data/train.csv"
-            df = preprocess_data(csv_path)
-            df_fact, df_orders, df_shipping, df_customers, df_regions, df_products = create_fact_and_dimensions(df)
-            st.success("Data pre-processed successfully!")
-            st.session_state.tables = {
-                'fact_sales': df_fact,
-                'dim_orders': df_orders,
-                'dim_shipping': df_shipping,
-                'dim_customers': df_customers,
-                'dim_regions': df_regions,
-                'dim_products': df_products
-            }
-            st.session_state.step_2_3_done = True
+            if st.button('Start pre-processing'):
+                csv_path = "./data/train.csv"
+
+                with st.status("Preprocessing data...", expanded=True) as status:
+                    st.write("Checking for dupes")
+                    time.sleep(1)  # Simulate processing
+                    st.write("Dropping dupes")
+                    time.sleep(1)
+                    st.write("Formatting data columns properly")
+                    time.sleep(1)
+                    st.write("Removing unnecessary cols")
+                    time.sleep(1)
+                    st.write("Date validation")
+                    time.sleep(1)
+
+                    df = preprocess_data(csv_path)
+                    df_fact, df_orders, df_shipping, df_customers, df_regions, df_products = create_fact_and_dimensions(df)
+
+                    status.update(label="Preprocessing complete!", state="complete", expanded=False)
+                        
+                st.success("Data pre-processed successfully!")
+                st.session_state.tables = {
+                    'fact_sales': df_fact,
+                    'dim_orders': df_orders,
+                    'dim_shipping': df_shipping,
+                    'dim_customers': df_customers,
+                    'dim_regions': df_regions,
+                    'dim_products': df_products
+                }
+                st.session_state.step_2_3_done = True
 
         # 4. pushing to bigquery
         if st.session_state.step_2_3_done:
@@ -132,7 +206,7 @@ def main():
 
                 # Line Chart - Average Shipping Days Trend (Sampled Data)
                 st.subheader("Trend of Average Shipping Days Over Orders")
-                df_sampled_shipping = df_shipping_logistics.sample(n=100, random_state=42)  # Reduce points plotted
+                df_sampled_shipping = df_shipping_logistics.sample(n=100, random_state=42).sort_values("order_id", key=lambda x: x.astype(str))  # Reduce points plotted
                 fig = px.line(df_sampled_shipping, x="order_id", y="avg_shipping_days", markers=True)
                 st.plotly_chart(fig, use_container_width=True)
 
@@ -204,7 +278,13 @@ def main():
                         st.plotly_chart(fig, use_container_width=True)
 
                     if "avg_order_frequency" in df_kpi.columns:
-                        fig = px.bar(df_kpi, x=df_kpi.columns[0], y="avg_order_frequency", text_auto=True)
+                        df_kpi["frequency_category"] = df_kpi["avg_order_frequency"].apply(
+                            lambda x: "1" if x == 1 else "1-2" if x <= 2 else "2-3" if x <= 3 else "3+"
+                        )
+                        freq_counts = df_kpi["frequency_category"].value_counts().reset_index()
+                        freq_counts.columns = ["Frequency Range", "Count"]
+
+                        fig = px.pie(freq_counts, names="Frequency Range", values="Count", hole=0.4)
                         st.plotly_chart(fig, use_container_width=True)
 
             elif analysis_subsection == "Aggregations":
