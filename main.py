@@ -1,5 +1,6 @@
 import time
 import streamlit as st
+from dotenv import load_dotenv
 import plotly.express as px
 from modules.aggregation_tabs import create_aggregation_procedures, execute_all_aggregations
 from modules.data_extraction_and_transformation import *
@@ -12,6 +13,8 @@ def get_data_mart(mart_name):
     return fetch_data_mart(mart_name)
 
 def main():
+    load_dotenv()
+
     """
     pipeline flow :-
     1. fetching data from api
