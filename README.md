@@ -33,9 +33,10 @@ git clone https://github.com/your-username/supply-chain-dashboard.git
 cd supply-chain-dashboard
 ```
 ### 2. Configure BigQuery Credentials
-Ensure your Google Cloud service account key is set up for BigQuery access:
+Ensure your Google Cloud service account key along with the project ID is set up for BigQuery access:
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/service-account-key.json"
+gcloud init
+gcloud auth application-default login
 ```
 ### 3. Run the Streamlit App
 ```bash
