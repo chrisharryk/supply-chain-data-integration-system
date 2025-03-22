@@ -28,7 +28,6 @@ def main():
     11. creating data marts
     12. fetching data marts
     """
-
     load_dotenv()
 
     # Initializing session state for pulling and pre-processing data
