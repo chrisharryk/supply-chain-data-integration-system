@@ -1,12 +1,10 @@
 import time
-from matplotlib import pyplot as plt
 import streamlit as st
-import seaborn as sns
 import plotly.express as px
-from modules.aggregation_tabs import create_aggregation_procedures, execute_aggregation_procedure, execute_all_aggregations
+from modules.aggregation_tabs import create_aggregation_procedures, execute_all_aggregations
 from modules.data_extraction_and_transformation import *
 from modules.data_mart_tabs import create_data_marts, fetch_data_mart
-from modules.kpi_tabs import create_kpi_procedures, execute_all_kpis, execute_kpi_procedure
+from modules.kpi_tabs import create_kpi_procedures, execute_all_kpis
 from modules.pushing_to_bigquery import push_to_bigquery
 
 @st.cache_data
