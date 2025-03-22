@@ -41,9 +41,3 @@ export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/service-account-key.json"
 ```bash
 streamlit run main.py
 ```
-
----
-
-## **Live Demo**
-Check out the live demo on Streamlit Cloud:
-[supplychain streamlit app](https://sc-analytics-chris.streamlit.app)
