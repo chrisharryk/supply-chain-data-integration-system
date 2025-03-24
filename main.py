@@ -222,7 +222,7 @@ def main():
 
     elif section == 'Schema':
         st.subheader('Schema Overview')
-        st.image("ER Diagram.svg", caption="ER Diagram", use_container_width=True)
+        st.image("ER Diagram.png", caption="ER Diagram", use_container_width=True)
         st.markdown("""
             ### **Fact Table: fact_sales**
             - Contains transactional data linked to dimensions via surrogate keys.
