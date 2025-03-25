@@ -197,10 +197,13 @@ def main():
 
                 # Bar Chart - Total Sales by Region
                 st.subheader("Total Sales by Region")
-                fig = px.bar(df_order_fulfillment, x="region_name", y="total_sales", text_auto=True)
+                fig = px.bar(df_order_fulfillment, 
+                            x="region_name", 
+                            y="total_sales") 
                 st.plotly_chart(fig, use_container_width=True)
+
                 st.markdown("""
-                The **West** and **East** regions lead in total sales, with both nearing **800k**, while the **Central** region follows at around **500k**. The **South** region records the **lowest sales** at approximately **16.72k**, indicating a significant regional disparity.
+                The **West** and **East** regions lead in total sales, with both nearing **800k**, while the **Central** region follows at around **500k**. The **South** region records the **lowest sales** at approximately **400k**, indicating a significant regional disparity.
                 """)
 
                 # Pie Chart - Top 5 Customers by Sales
@@ -295,7 +298,7 @@ def main():
                         fig = px.pie(df_kpi, names=df_kpi.columns[0], values="total_revenue", hole=0.3)
                         st.plotly_chart(fig, use_container_width=True)
                         st.markdown("""
-                        Office Supplies generate the most revenue, but Technology and Furniture contribute nearly equal shares. Despite lower sales volume, Technology has a higher revenue share, indicating higher-priced items or better margins.
+                        Technology generates the most revenue, but Office Supplies and Furniture contribute nearly equal shares. Despite lower sales volume, Technology has a higher revenue share, indicating higher-priced items or better margins.
                         """)
 
                     if "avg_order_value" in df_kpi.columns:
