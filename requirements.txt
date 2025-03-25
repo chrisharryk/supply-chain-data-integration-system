@@ -5,3 +5,6 @@ numpy
 matplotlib
 plotly
 google-cloud-bigquery
+kaggle
+pandas_gbq
+google-cloud-bigquery-storage
