@@ -173,6 +173,11 @@ def main():
                 st.subheader("Sales Revenue Distribution by Category")
                 fig = px.pie(df_inventory, names="Category", values="total_sales_revenue", hole=0.3)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                The Technology category accounts for 37.5% of the total sales revenue, making it the largest contributor. 
+                Furniture follows closely with 31.8%, while Office Supplies contributes 30.6%, indicating a relatively 
+                balanced revenue distribution across all three categories.
+                """)
 
                 # Bar Chart - Total Orders by Sub-Category
                 st.subheader("Total Orders by Sub-Category")
@@ -180,6 +185,9 @@ def main():
                 fig = px.bar(df_top_subcategories, x="Sub-Category", y="total_orders", text_auto=True)
                 fig.update_layout(xaxis_tickangle=-45)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                **Binders** and **Paper** lead in total orders with **1,529** and **1,420** orders respectively, indicating high demand. **Furnishings** and **Phones** follow, while **Labels** and **Appliances** show the **lowest order volumes**, suggesting less customer interest in these sub-categories.
+                """)
 
             # Order Fulfillment
             elif eda_section == "Order Fulfillment":
@@ -191,12 +199,18 @@ def main():
                 st.subheader("Total Sales by Region")
                 fig = px.bar(df_order_fulfillment, x="region_name", y="total_sales", text_auto=True)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                The **West** and **East** regions lead in total sales, with both nearing **800k**, while the **Central** region follows at around **500k**. The **South** region records the **lowest sales** at approximately **16.72k**, indicating a significant regional disparity.
+                """)
 
                 # Pie Chart - Top 5 Customers by Sales
                 st.subheader("Top 5 Customers by Sales Contribution")
                 top_customers = df_order_fulfillment.groupby("customer_name")["total_sales"].sum().nlargest(5).reset_index()
                 fig = px.pie(top_customers, names="customer_name", values="total_sales", hole=0.3)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                **Sean Miller** leads customer sales contribution at **24.5%**, followed by **Peter Fuller** at **20.3%**, while **Tamara Chand**, **Seth Vernon**, and **Todd Sumrall** contribute between **18% and 18.7%**, showing a fairly balanced distribution among the top five.
+                """)
 
             # Shipping Logistics
             elif eda_section == "Shipping Logistics":
@@ -209,16 +223,25 @@ def main():
                 df_sampled_shipping = df_shipping_logistics.sample(n=100, random_state=42).sort_values("order_id", key=lambda x: x.astype(str))  # Reduce points plotted
                 fig = px.line(df_sampled_shipping, x="order_id", y="avg_shipping_days", markers=True)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                The average shipping days fluctuate significantly between **2 and 6 days** across orders, with no clear upward or downward trend, indicating inconsistent shipping times.
+                """)
 
                 # Bar Chart - Average Shipping Days by Ship Mode
                 st.subheader("Average Shipping Days by Ship Mode")
                 fig = px.bar(df_shipping_logistics, x="ship_mode", y="avg_shipping_days", text_auto=True)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                Longer average shipping times for "Standard Class" may indicate slower processing or higher volume, while "Same Day" shipping, despite its name, still averages 4 days, suggesting potential delays. Consistent averages for "First Class" and "Second Class" could reflect standardized processes or similar operational efficiencies.
+                """)
 
                 # Pie Chart - Sales Distribution by Region
                 st.subheader("Sales Distribution by Region")
                 fig = px.pie(df_shipping_logistics, names="region_name", values="total_sales", hole=0.3)
                 st.plotly_chart(fig, use_container_width=True)
+                st.markdown("""
+                The East region leads in sales contribution, followed closely by the West, while the Central and South regions account for smaller shares. The significant difference between East and South suggests varying market demand or performance across regions.
+                """)
 
     elif section == 'Schema':
         st.subheader('Schema Overview')
@@ -264,18 +287,32 @@ def main():
                     if "total_sales" in df_kpi.columns:
                         fig = px.bar(df_kpi, x=df_kpi.columns[0], y="total_sales", text_auto=True)
                         st.plotly_chart(fig, use_container_width=True)
+                        st.markdown("""
+                        Office Supplies dominate total sales by a significant margin compared to Technology and Furniture. The lower sales in Technology and Furniture could indicate either lower demand or higher price sensitivity in these categories.
+                        """)
 
                     if "total_revenue" in df_kpi.columns:
                         fig = px.pie(df_kpi, names=df_kpi.columns[0], values="total_revenue", hole=0.3)
                         st.plotly_chart(fig, use_container_width=True)
+                        st.markdown("""
+                        Office Supplies generate the most revenue, but Technology and Furniture contribute nearly equal shares. Despite lower sales volume, Technology has a higher revenue share, indicating higher-priced items or better margins.
+                        """)
 
                     if "avg_order_value" in df_kpi.columns:
                         fig = px.bar(df_kpi, x=df_kpi.columns[0], y="avg_order_value", text_auto=True)
                         st.plotly_chart(fig, use_container_width=True)
+                        st.markdown("""
+                        Technology leads with the highest average order value, followed by Furniture. Office Supplies has the lowest average order value, indicating smaller transaction sizes in that category.
+                        """)
 
                     if "lead_time_days" in df_kpi.columns:
                         fig = px.histogram(df_kpi, x="lead_time_days", nbins=20)
                         st.plotly_chart(fig, use_container_width=True)
+                        st.markdown(
+                            """
+                            The distribution of lead times shows that most orders are fulfilled within 4 days, with a noticeable peak at this point. Lead times of 2 and 5 days are also common, while 0, 1, and 7 days are less frequent, suggesting variability in processing efficiency.
+                            """
+                        )
 
                     if "avg_order_frequency" in df_kpi.columns:
                         df_kpi["frequency_category"] = df_kpi["avg_order_frequency"].apply(
@@ -286,6 +323,9 @@ def main():
 
                         fig = px.pie(freq_counts, names="Frequency Range", values="Count", hole=0.4)
                         st.plotly_chart(fig, use_container_width=True)
+                        st.markdown("""
+                        The vast majority (97.9%) of customers placed only one order, while a small fraction (2.1%) placed between one and two orders. This suggests low repeat purchase behavior.
+                        """)
 
             elif analysis_subsection == "Aggregations":
                 st.subheader("Aggregated Metrics")
