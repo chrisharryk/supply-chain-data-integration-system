@@ -38,7 +38,12 @@ Ensure your Google Cloud service account key along with the project ID is set up
 gcloud init
 gcloud auth application-default login
 ```
-### 3. Run the Streamlit App
+### 3. Install the requirements
+Use the requirements.txt file to install the dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Run the Streamlit App
 ```bash
 streamlit run main.py
 ```
