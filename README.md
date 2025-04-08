@@ -29,7 +29,7 @@ This dashboard provides real-time insights to monitor and optimize supply chain 
 
 ### 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-username/supply-chain-dashboard.git
+git clone https://github.com/chrisharryk/supply-chain-dashboard.git
 cd supply-chain-dashboard
 ```
 ### 2. Configure BigQuery Credentials
